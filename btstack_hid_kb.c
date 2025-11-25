@@ -228,7 +228,6 @@ static void typing_can_send_now(void){
             }
             break;
         case W4_CAN_SEND_KEY_UP:
-            //send_report(0, 0);
             if (!queue_is_empty(&hid_keyboard_report_queue)) {
                 state = W4_CAN_SEND_FROM_BUFFER;
                 hids_device_request_can_send_now_event(con_handle);
