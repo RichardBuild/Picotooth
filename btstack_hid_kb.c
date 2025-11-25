@@ -186,7 +186,7 @@ enum {
     W4_CAN_SEND_KEY_UP,
 } state;
 
-static bool sendreportreal(void){
+static bool send_report(void){
     struct 
     {
         uint8_t modifier;   /**< Keyboard modifier (KEYBOARD_MODIFIER_* masks). */
@@ -212,26 +212,11 @@ static bool sendreportreal(void){
         return 0;
     }
 }
-static void send_report(int modifier, int keycode){
-    uint8_t report[] = {  modifier, 0, keycode, 0, 0, 0, 0, 0};
-    switch (protocol_mode){
-        case 0:
-            hids_device_send_boot_keyboard_input_report(con_handle, report, sizeof(report));
-            break;
-        case 1:
-           hids_device_send_input_report(con_handle, report, sizeof(report));
-           break;
-        default:
-            break;
-    }
-}
-
-
 static void typing_can_send_now(void){
     switch (state){
         case W4_CAN_SEND_FROM_BUFFER:
             while (1){
-                if(sendreportreal()){
+                if(send_report()){
                     state = W4_CAN_SEND_KEY_UP;
                     hids_device_request_can_send_now_event(con_handle);
                     break;
