@@ -196,7 +196,8 @@ static bool send_report(void){
 
     if (queue_try_remove(&hid_keyboard_report_queue, &report_q)) {
         uint8_t report[] = {report_q.modifier, 0, 
-                    report_q.keycode[0],0,0,0,0,0};
+                    report_q.keycode[0], report_q.keycode[1], report_q.keycode[2],
+                    report_q.keycode[3], report_q.keycode[4], report_q.keycode[5]};
         switch (protocol_mode){
         case 0:
             hids_device_send_boot_keyboard_input_report(con_handle, report, sizeof(report));
