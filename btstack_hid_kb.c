@@ -36,7 +36,6 @@
  *
  */
 
-//try to do this without ringbuffer and just queue
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
