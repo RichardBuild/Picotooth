@@ -348,9 +348,6 @@ int main()
     }
 
     while(1) {
-        if (con_handle == HCI_CON_HANDLE_INVALID) {
-            continue;//this is invalid so the loop does not reach tuh_task()
-        }
         // tinyusb host task
         tuh_task();
     }
