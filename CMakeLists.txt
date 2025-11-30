@@ -73,7 +73,7 @@ target_include_directories(btstack_hid_kb PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
   ${CMAKE_CURRENT_LIST_DIR}/.. # for our common lwipopts or any other standard includes, if required
 )
-pico_btstack_make_gatt_header(btstack_hid_kb PRIVATE "${CMAKE_CURRENT_LIST_DIR}/hog_custom_keypad.gatt")
+pico_btstack_make_gatt_header(btstack_hid_kb PRIVATE "${CMAKE_CURRENT_LIST_DIR}/hog_keyboard.gatt")
 # Add any user requested libraries   ----------
 target_link_libraries(btstack_hid_kb
         tinyusb_host 

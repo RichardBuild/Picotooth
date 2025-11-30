@@ -99,7 +99,7 @@
 #undef HID_REPORT_TYPE_FEATURE
 #undef hid_report_type_t
 #include "pico/util/queue.h"
-#include "hog_custom_keypad.h"
+#include "hog_keyboard.h"
 #define REPORT_ID 0x01
 queue_t hid_keyboard_report_queue;
 hci_con_handle_t con_handle = HCI_CON_HANDLE_INVALID;
