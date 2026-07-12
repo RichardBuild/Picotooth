@@ -20,7 +20,7 @@ This project implements BLE on a pre-existing project completed by [MCU Applicat
 ## Rationale
 The Raspberry Pi Pico W and Pico 2 W have many advantages in this application over other microcontrollers. The Pico W and Pico 2 W have low Bluetooth power consumption while having USB host support built in. With the addition of deep sleep in the RP2350, the Pico 2 W is both power efficient and easy to set up. 
 
-Other candidates include microcontrollers with built-in USB host and Bluetooth such as the ESP32-S3, but these controllers often have high Bluetooth power consumption. Controllers with very low Bluetooth power consumption such as the nRF52840 require an external USB host chip such as the MAX3421E which increases power consumption and complexity. 
+Other candidates include microcontrollers with built-in USB host and Bluetooth such as the ESP32-S3, but these controllers often have high Bluetooth power consumption. On the other hand, controllers with very low Bluetooth power consumption such as the nRF52840 require an external USB host chip such as the MAX3421E which increases power consumption and complexity. 
 
 ## Hardware Requirements
 - Raspberry Pi Pico W or Pico 2 W
